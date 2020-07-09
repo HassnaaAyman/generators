@@ -1,0 +1,27 @@
+/**
+  *
+  *
+  * {{properCase componentName}} Component
+  *
+  *
+*/
+
+{{#if state}} import React, {useState, useCallback} from 'react'; {{else}} import React from 'react'; {{/if}}
+import IProps from './index.interface';
+/**
+  * the `componentName` comes from prompets actions
+  * properCase to captalize each word first Letter 
+*/
+
+const {{properCase componentName}}: React.FC<IProps> = (): JSX.Element => {
+ {{#if state}} const [stateName , setStateName] = useState<any>(null);
+ const memoizedSateName = useCallback((value:any)=>setStateName(value) , [setStateName]);
+ {{/if}}
+  return (
+    <>
+      {{properCase componentName}}
+    </>
+  );
+};
+
+export default {{#if memo}} React.memo({{ properCase componentName }}) {{else}} {{ properCase componentName }} {{/if}};
