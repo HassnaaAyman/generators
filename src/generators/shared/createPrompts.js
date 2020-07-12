@@ -17,6 +17,12 @@ const createPrompts = (defaulComponentName = "ComponentName") => [
         message: "Do You need internal state ?",
         default: true,
       },
+    {
+        type: "confirm",
+        name: "gql",
+        message: "Do You need to add gql to your component ?",
+        default: true,
+      }
   ];
   
   module.exports = createPrompts;

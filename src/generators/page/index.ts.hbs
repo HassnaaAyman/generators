@@ -6,16 +6,18 @@
   *
 */
 
-{{#if state}} import React, {useState, useCallback} from 'react'; {{else}} import React from 'react'; {{/if}}
+import React from 'react';
+// import useLabelsRequest from 'customHooks/useLabelsRequest';
+// import useTheme from 'customHooks/useAppTheme';
+import IProps from './index.interface';
 {{#if gql}} import graphql from "babel-plugin-relay/macro"; {{/if}} 
 {{#if gql}} import { useQuery } from "relay-hooks"; {{/if}} 
 
-
-import IProps from './index.interface';
 /**
-  * the `componentName` comes from prompets actions
+  * the `componentName` comes from prompts actions
   * properCase to captalize each word first Letter 
 */
+
 
 {{#if gql}} 
 const PostsAllPostsQuery = graphql`
@@ -28,12 +30,20 @@ const PostsAllPostsQuery = graphql`
 `;
 {{/if}}
 
-const {{properCase componentName}}: React.FC<IProps> = (): JSX.Element => {
- {{#if state}} const [stateName , setStateName] = useState<any>(null);
- const memoizedSateName = useCallback((value:any)=>setStateName(value) , [setStateName]);
- {{/if}}
- 
- {{#if gql}}
+const {{properCase componentName}}: React.FC<IProps> = (props): JSX.Element => {
+
+  // useLabelsRequest({{ camelCase componentName }});
+  
+  // const { colors } = useTheme()
+  
+  {{#if useInternalState}} 
+    /**
+      * `useInternalState` comes from prompts actions
+     */
+    const [state, setState] = React.useState("");
+  {{/if}}
+
+   {{#if gql}}
  const { props, error } = useQuery(
     PostsAllPostsQuery,
     {}, 

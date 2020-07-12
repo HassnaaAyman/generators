@@ -1,0 +1,30 @@
+# this is a demo for scehma and how should it be like 
+# note! you need to run 'run relay' once you finished your schema to 
+# let relay compiler generate the __generated__ files to you
+# you can also find the command in package.json file as a script to run it easily .
+
+type Post {
+  id: String!
+  title: String!
+  body: String!
+}
+
+type User {
+  id: String!
+  name: String!
+  username: String!
+}
+
+input PostInput {
+userId: Int!
+title: String!
+body: String!
+}
+
+type Mutation {
+  addPost(data: PostInput!): [Post]
+}
+
+type Query {
+ posts : [Post]
+}
