@@ -1,0 +1,21 @@
+import React from 'react';
+const {memo , useState , useCallback} = React;
+
+interface IProps{
+ placeholder? : string 
+ value : string 
+ onChange : (value:any)=>void
+}
+
+const CustomInput : React.FC<IProps> = ({placeholder , value , onChange}): JSX.Element =>{
+const [{{properCase inputName}} , set{{properCase inputName}}] = useState<any>("");
+const memoized{{properCase inputName}} = useCallback((value:any)=>set{{properCase inputName}} , [set{{properCase inputName}}])   
+return(
+  <form>
+    <input type="text" placeholder="{{properCase inputName}}" value={"{{properCase inputName}}"} onChange={()=>value} name="{{properCase inputName}}"/>
+    <button type="submit">Submit</button>
+  </form>
+)
+}
+
+export default memo(CustomInput)

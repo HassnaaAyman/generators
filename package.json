@@ -29,6 +29,7 @@
     "eject": "react-scripts eject",
     "plop": "plop --plopfile src/generators/index.js",
     "plop-gql": "plop --plopfile src/generators/index.js && yarn add graphql && yarn add react-relay && yarn add relay-hooks && yarn add relay-runtime && yarn add relay-compiler && yarn add relay-config && yarn add babel-plugin-relay",
+    "plop-form":"plop --plopfile src/generators/index.js",
     "relay": "relay-compiler --src ./src/gql --schema ./schema.graphql"
 
   },

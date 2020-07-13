@@ -6,6 +6,8 @@ const { execSync } = require("child_process");
 const componentGenerator = require("./component/index");
 const gqlGenerator = require("./gql/index");
 const pageGenerator = require("./page/index");
+const formGenerator = require("./form/index");
+
 
 
 module.exports = (plop) => {
@@ -17,6 +19,8 @@ module.exports = (plop) => {
   plop.setGenerator("component", componentGenerator);
   plop.setGenerator("gql", gqlGenerator);
   plop.setGenerator("Page", pageGenerator);
+  plop.setGenerator("Form", formGenerator);
+
 
   plop.setActionType(
     "prettify",

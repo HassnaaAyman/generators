@@ -9,7 +9,6 @@
 import React, { useState, useCallback } from "react";
 import graphql from "babel-plugin-relay/macro";
 import { useQuery } from "relay-hooks";
-
 import IProps from "./index.interface";
 /**
  * the `componentName` comes from prompets actions

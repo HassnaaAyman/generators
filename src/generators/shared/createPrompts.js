@@ -22,7 +22,13 @@ const createPrompts = (defaulComponentName = "ComponentName") => [
         name: "gql",
         message: "Do You need to add gql to your component ?",
         default: true,
-      }
+      },
+      {
+        type: "confirm",
+        name: "form",
+        message: "Do You wanna use form in your component?",
+        default: true,
+      },
   ];
   
   module.exports = createPrompts;
