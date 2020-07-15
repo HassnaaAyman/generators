@@ -6,7 +6,7 @@ const createSimpleActions = (isComponentType) => {
   return [
     {
       type: "add",
-      path: `../${componentPath}/environment.js`,
+      path: `../../${componentPath}/environment.js`,
       templateFile: path.join(
         __dirname,
         `../${componentPath.toLowerCase().replace("s", "")}/index.ts.hbs`
@@ -15,7 +15,7 @@ const createSimpleActions = (isComponentType) => {
     },
     {
         type: "add",
-        path: `../${componentPath}/schema.graphql`,
+        path: `../../${componentPath}/schema.graphql`,
         templateFile: __dirname + "/base.schema.graphql.hbs",
         abortOnFail: true,
       },

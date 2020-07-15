@@ -24,7 +24,7 @@ module.exports = (plop) => {
 
   plop.setActionType(
     "prettify",
-    (answers, config) => {
+    (answers, config) => {      
       // log answer to see every prompt values
       // console.log("answers", answers);
       const folderPath = `${path.join(

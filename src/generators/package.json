@@ -1,0 +1,11 @@
+{
+  "name": "generators-cli",
+  "version": "1.1.1",
+  "description": "this package to generate some of most commonly code we can write every day",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

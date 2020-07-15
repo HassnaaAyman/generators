@@ -6,7 +6,7 @@ const createSimpleActions = (isComponentType) => {
   return [
     {
       type: "add",
-      path: `../${componentPath}/{{properCase componentName}}/index.tsx`,
+      path: `../../${componentPath}/{{properCase componentName}}/index.tsx`,
       templateFile: path.join(
         __dirname,
         `../${componentPath.toLowerCase().replace("s", "")}/index.ts.hbs`
