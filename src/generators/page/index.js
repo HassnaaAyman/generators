@@ -8,8 +8,8 @@
 
 /* eslint strict: ["off"] */
 
-const createPrompts = require("../shared/createPrompts");
-const createActions = require("../shared/createActions");
+const createPrompts = require("../shared/createPagePrompts");
+const createActions = require("../shared/createPageActions");
 
 module.exports = {
   description: "Add New Page",

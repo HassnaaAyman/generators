@@ -2,6 +2,6 @@ export interface ContainerProps {
   bgColor?: string
 }
 
-export default interface HomeProps {
+export default interface HeaderProps {
 
 }

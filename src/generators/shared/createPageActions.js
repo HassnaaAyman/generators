@@ -1,12 +1,12 @@
 const path = require("path");
 
 const createSimpleActions = (isComponentType) => {
-  const componentPath = isComponentType ? "components" : "pages";
+  const componentPath = isComponentType ? "components" : "Pages";
 
   return [
     {
       type: "add",
-      path: `../../${componentPath}/{{typeName}}/{{properCase componentName}}/index.tsx`,
+      path: `../../${componentPath}/{{properCase componentName}}/index.tsx`,
       templateFile: path.join(
         __dirname,
         `../${componentPath.toLowerCase().replace("s", "")}/index.ts.hbs`
@@ -15,7 +15,7 @@ const createSimpleActions = (isComponentType) => {
     },
     {
       type: "add",
-      path: `../../${componentPath}/{{typeName}}/{{properCase componentName}}/index.css`,
+      path: `../../${componentPath}/{{properCase componentName}}/index.css`,
       templateFile: __dirname + "/base.css.hbs",
       abortOnFail: true,
     },

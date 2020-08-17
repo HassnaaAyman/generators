@@ -1,7 +1,7 @@
 const path = require("path");
 
 const createSimpleActions = (isComponentType) => {
-  const componentPath = isComponentType ? "components" : "Form";
+  const componentPath = isComponentType ? "components" : "form";
 
   return [
     {
@@ -12,7 +12,7 @@ const createSimpleActions = (isComponentType) => {
         `../${componentPath.toLowerCase().replace("s", "")}/index.ts.hbs`
       ),
       abortOnFail: true,
-    }
+    },
   ];
 };
 

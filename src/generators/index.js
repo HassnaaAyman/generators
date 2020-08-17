@@ -7,8 +7,7 @@ const componentGenerator = require("./component/index");
 const gqlGenerator = require("./gql/index");
 const pageGenerator = require("./page/index");
 const formGenerator = require("./form/index");
-
-
+const InterfaceGenerator = require("./infrastructure/interfaces/index");
 
 module.exports = (plop) => {
   /**
@@ -20,27 +19,24 @@ module.exports = (plop) => {
   plop.setGenerator("gql", gqlGenerator);
   plop.setGenerator("Page", pageGenerator);
   plop.setGenerator("Form", formGenerator);
+  plop.setGenerator("Interface", InterfaceGenerator);
 
-
-  plop.setActionType(
-    "prettify",
-    (answers, config) => {      
-      // log answer to see every prompt values
-      // console.log("answers", answers);
-      const folderPath = `${path.join(
-        __dirname,
-        "../",
-        config.path,
-        plop.getHelper("properCase")(answers.componentName),
-        "**.ts"
-      )}`;
-
-      try {
-        execSync(`yarn prettify "${folderPath}"`);
-        return folderPath;
-      } catch (err) {
-        throw err;
-      }
+  plop.setActionType("prettify", (answers, config) => {
+    // log answer to see every prompt values
+    // console.log("answers", answers);
+    const folderPath = `${path.join(
+      __dirname,
+      "../",
+      config.path,
+      plop.getHelper("properCase")(answers.componentName),
+      "**.ts"
+    )}`;
+    console.log(folderPath, "folderPath");
+    try {
+      execSync(`yarn prettify "${folderPath}"`);
+      return folderPath;
+    } catch (err) {
+      throw err;
     }
-  );
+  });
 };

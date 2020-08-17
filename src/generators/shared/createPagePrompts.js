@@ -1,14 +1,4 @@
-const createPrompts = (
-  defaulComponentName = "ComponentName",
-  defaultTypeName = "TypeName"
-) => [
-  {
-    type: "list",
-    name: "typeName",
-    message: "which type do you need to create your component?",
-    choices: ["atoms", "molcules", "organisms"],
-    default: defaultTypeName,
-  },
+const createPrompts = (defaulComponentName = "ComponentName") => [
   {
     type: "input",
     name: "componentName",
