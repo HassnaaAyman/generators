@@ -1,10 +1,10 @@
 {
-  "name": "@HassnaaAyman/generators-cli",
-  "version": "1.0.0",
+  "name": "@hassnaaayman/generators-cli",
+  "version": "1.0.5",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/HassnaaAyman/generators"
+    "url": "git+https://github.com/HassnaaAyman/generators.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/HassnaaAyman"
@@ -57,5 +57,13 @@
     "@types/react": "^16.9.41",
     "jest": "^26.1.0",
     "plop": "^2.7.1"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "bugs": {
+    "url": "https://github.com/HassnaaAyman/generators/issues"
+  },
+  "homepage": "https://github.com/HassnaaAyman/generators#readme",
+  "main": "index.js",
+  "author": "hassnaa",
+  "license": "ISC"
 }

@@ -1,44 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## README.md
 
-## Available Scripts
+this package created to help most of us as a developers to generate
+the most common code we can write it every day like (components, pages, gql schema and environment and if your project contais forms)
+with this package you can run one command and generate the fully structured components folder with the whole structure .
 
-In the project directory, you can run:
+## Avaliable Scripts
 
-### `yarn start`
+# first to use the package into your project you need to add some scripts to your package.json to can run the bellow commands :
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- "plop": "plop --plopfile node_modules/generators-packages/index.js",
+- "plop-gql": "plop --plopfile node_modules/generators-packages/index.js & & yarn add graphql && yarn add react-relay && yarn add relay-hooks && yarn add relay-runtime && yarn add relay-compiler && yarn add relay-config && yarn add babel-plugin-relay",
+- "plop-form":"plop --plopfile node_modules/generators-packages/index.js"
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+in the project directory, you can run :
 
-### `yarn test`
+### `npm i generators-cli` to install it into your directory
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+if you need to create components or pages, you can run :
 
-### `yarn build`
+### `npm run plop`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+it wil ask you some questions, like :
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- your component name
+- if you want to add an internal state will create also a useCallback for every state
+- if you want to wrap your component with React.memo
+- finally if you want to add a gql structure and syntex
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+if you need to add a gql to your project, you can run :
 
-### `yarn eject`
+### `npm run plop-gql`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- it will install all the dependencies which needs to let you use gql using relay in your project such as react-relay , relay-compiler and so on ...
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- also will create a folder called gql contains an environmentjs file with the fully configration and a schemajs file with an example .
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+finally if you need to use a form in your project, you can run :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `npm run plop-form`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+it will help you to generate a form component
