@@ -1,0 +1,19 @@
+import React from 'react';
+const {memo , useState , useCallback} = React;
+
+interface IProps{
+ placeholder? : string 
+ value : string 
+ onChange : (value:any)=>void
+}
+
+const CustomInput : React.FC<IProps> = ({placeholder , value , onChange}): JSX.Element =>{
+
+return(
+  <>
+    <input type="text" placeholder={placeholder} value={value} onChange={onChange}/>
+  </>
+)
+}
+
+export Default memo(CustomInput)

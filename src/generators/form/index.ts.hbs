@@ -1,0 +1,18 @@
+import React from 'react';
+const {memo , useState , useCallback} = React;
+
+
+const CustomInput : React.FC<{}> = (): JSX.Element =>{
+  const [{{properCase inputName}} , set{{properCase inputName}}] = useState<any>("");
+    const memoized{{properCase inputName}} = useCallback((value:any)=>set{{properCase inputName}} ,
+    [set{{properCase inputName}}])
+    return(
+    <form>
+      <input type="text" placeholder="{{properCase inputName}}" value={ {{properCase inputName}} } onChange={()=>
+      memoized{{properCase inputName}} } name="{{inputName}}" />
+      <button type="submit">Submit</button>
+    </form>
+    )
+    }
+
+    export default memo(CustomInput)

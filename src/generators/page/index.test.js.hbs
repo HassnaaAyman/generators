@@ -1,0 +1,72 @@
+import React from "react";
+import { RelayEnvironmentProvider } from "relay-hooks";
+import { render } from "@testing-library/react";
+import { MockPayloadGenerator } from "relay-test-utils";
+import { act } from "react-dom/test-utils";
+import {{properCase componentName}} from "./index";
+import userEvent from "@testing-library/user-event";
+import { createMockEnvironment } from "relay-test-utils";
+
+let renderer;
+let environment = createMockEnvironment();
+
+describe("", () => {
+beforeEach(() => {
+act(() => {
+renderer = render(
+<RelayEnvironmentProvider environment={environment}>
+    <{{properCase componentName}} />
+</RelayEnvironmentProvider>
+);
+});
+});
+
+
+{{#if_eq testingTypeName  'index'}}
+it("should have empty array by default", () => {
+const posts = renderer.getByTestId("write your test-id here");
+expect(posts.children).toHaveLength(0);
+});
+{{/if_eq}}
+
+{{#if_eq testingTypeName  'show' }}
+it("should show the data", () => {
+const component = renderer.getByTestId("write your test-id here");
+expect(component).toHaveTextContent("ay7aga");
+});
+{{/if_eq}}
+
+{{#if_eq testingTypeName  'create' }}
+it("should let user add a new post", async () => {
+const postTitle = renderer.getByTestId("write your test-id here");
+await userEvent.type(postTitle, "welcom");
+
+const postBody = renderer.getByTestId("write your test-id here");
+await userEvent.type(postBody, "there!");
+
+const posts = renderer.getByTestId("posts");
+
+const submitPostButton = renderer.getByTestId("write your test-id here");
+await userEvent.click(submitPostButton);
+expect(posts).toHaveTextContent("there! : welcom");
+});
+{{/if_eq}}
+
+{{#if_eq testingTypeName 'relay'}}
+it("should render with error state", async() => {
+environment.mock.rejectMostRecentOperation(new Error("Uh-oh"));
+const error = renderer.getByTestId("write your test-id here");
+expect(error).toHaveTextContent("Uh-oh");
+});
+
+it("should render the data", () => {
+environment.mock.resolveMostRecentOperation((operation) =>
+MockPayloadGenerator.generate(operation, {
+id: 1,
+title: "ay7aga",
+body: "lm;ml;dcdkce",
+})
+);
+});
+{{/if_eq}}
+});

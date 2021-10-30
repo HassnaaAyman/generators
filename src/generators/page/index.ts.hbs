@@ -1,0 +1,60 @@
+/**
+*
+*
+* {{properCase componentName}} Component
+*
+*
+*/
+
+{{#if state}} import React, {useState, useCallback} from 'react'; {{else}} import React from 'react'; {{/if}}
+{{#if gql}} import graphql from "babel-plugin-relay/macro"; {{/if}}
+{{#if gql}} import { useQuery } from "relay-hooks"; {{/if}}
+
+
+/**
+* the `componentName` comes from prompets actions
+* properCase to captalize each word first Letter
+*/
+
+{{#if gql}}
+const PostsAllPostsQuery = graphql`
+query PostsAllPostsQuery {
+posts {
+id
+title
+}
+}
+`;
+{{/if}}
+
+const {{properCase componentName}}: React.FC<{}> = (): JSX.Element => {
+  {{#if state}} const [stateName , setStateName] = useState<any>(null);
+    const memoizedSateName = useCallback((value:any)=>setStateName(value) , [setStateName]);
+    {{/if}}
+
+    {{#if gql}}
+    const { props, error } = useQuery(
+    PostsAllPostsQuery,
+    {},
+    {
+    fetchPolicy: "store-or-network",
+    }
+    );
+    if (error) {
+    return <div>{error.message}</div>;
+    } else if (props) {
+    return props;
+    }else{
+    <div>Loading</div>;
+    }
+    {{/if}}
+
+    return (
+    <>
+      {{properCase componentName}}
+    </>
+    );
+    };
+
+    export default {{#if memo}} React.memo({{ properCase componentName }}) {{else}} {{ properCase componentName }}
+    {{/if}};

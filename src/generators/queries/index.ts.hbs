@@ -1,0 +1,12 @@
+import { graphql } from "react-relay";
+
+export const {{queryName}} = graphql`
+mutation {{queryName}}_{{queryName}}Query($input: CreateUserInput!) {
+createUser(input: $input) {
+id
+name
+username
+email
+}
+}
+`;
